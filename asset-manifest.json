@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.a1b7b015.chunk.css",
-    "main.js": "/my-portfolio/static/js/main.fa4e991f.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.fa4e991f.chunk.js.map",
-    "runtime~main.js": "/my-portfolio/static/js/runtime~main.674e5ed7.js",
-    "runtime~main.js.map": "/my-portfolio/static/js/runtime~main.674e5ed7.js.map",
-    "static/css/2.510409cd.chunk.css": "/my-portfolio/static/css/2.510409cd.chunk.css",
-    "static/js/2.51242b6d.chunk.js": "/my-portfolio/static/js/2.51242b6d.chunk.js",
-    "static/js/2.51242b6d.chunk.js.map": "/my-portfolio/static/js/2.51242b6d.chunk.js.map",
-    "index.html": "/my-portfolio/index.html",
-    "precache-manifest.462af8061a591f4a5a89dc8754313b62.js": "/my-portfolio/precache-manifest.462af8061a591f4a5a89dc8754313b62.js",
-    "service-worker.js": "/my-portfolio/service-worker.js",
-    "static/css/2.510409cd.chunk.css.map": "/my-portfolio/static/css/2.510409cd.chunk.css.map",
-    "static/css/main.a1b7b015.chunk.css.map": "/my-portfolio/static/css/main.a1b7b015.chunk.css.map"
+    "main.css": "/My-Portfolio/static/css/main.a1b7b015.chunk.css",
+    "main.js": "/My-Portfolio/static/js/main.25858fb4.chunk.js",
+    "main.js.map": "/My-Portfolio/static/js/main.25858fb4.chunk.js.map",
+    "runtime~main.js": "/My-Portfolio/static/js/runtime~main.f7066801.js",
+    "runtime~main.js.map": "/My-Portfolio/static/js/runtime~main.f7066801.js.map",
+    "static/css/2.510409cd.chunk.css": "/My-Portfolio/static/css/2.510409cd.chunk.css",
+    "static/js/2.51242b6d.chunk.js": "/My-Portfolio/static/js/2.51242b6d.chunk.js",
+    "static/js/2.51242b6d.chunk.js.map": "/My-Portfolio/static/js/2.51242b6d.chunk.js.map",
+    "index.html": "/My-Portfolio/index.html",
+    "precache-manifest.15205983a594cc1b932f409259e41e3c.js": "/My-Portfolio/precache-manifest.15205983a594cc1b932f409259e41e3c.js",
+    "service-worker.js": "/My-Portfolio/service-worker.js",
+    "static/css/2.510409cd.chunk.css.map": "/My-Portfolio/static/css/2.510409cd.chunk.css.map",
+    "static/css/main.a1b7b015.chunk.css.map": "/My-Portfolio/static/css/main.a1b7b015.chunk.css.map"
   }
 }
