@@ -43,67 +43,95 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Container className="p-0" fluid={true} style={{backgroundImage: `url(${require('./assets/images/pattern.png')})`}}>
-          <Navbar className="border-top" bg="light" expand="lg">
-            <Navbar.Brand>
-              <img
-                src={require('./assets/images/favicon.ico')}
-                width="40"
-                height="40"
-                className="d-inline-block align-top"
-                alt="React Bootstrap logo"
+          <Container
+            className="p-0"
+            fluid={true}
+            style={{
+              backgroundImage: `url(${require("./assets/images/pattern.png")})`,
+            }}
+          >
+            <Navbar className="border-top" bg="light" expand="lg">
+              <Navbar.Brand>
+                <img
+                  src={require("./assets/images/favicon.ico")}
+                  width="40"
+                  height="40"
+                  className="d-inline-block align-top"
+                  alt="React Bootstrap logo"
+                />
+              </Navbar.Brand>
+
+              <Navbar.Toggle
+                className="border-0"
+                aria-controls="navbar-toggle"
               />
-            </Navbar.Brand>
+              <Navbar.Collapse id="navbar-toggle">
+                <Nav className="m-auto">
+                  <Link
+                    className="nav-link"
+                    to="/"
+                    style={{ fontSize: 20, marginleft: 20, marginRight: 20 }}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    className="nav-link"
+                    to="/resume"
+                    style={{ fontSize: 20, marginleft: 20, marginRight: 20 }}
+                  >
+                    Resume
+                  </Link>
+                  <Link
+                    className="nav-link"
+                    to="/about"
+                    style={{ fontSize: 20, marginleft: 20, marginRight: 20 }}
+                  >
+                    About Me
+                  </Link>
+                  <Link
+                    className="nav-link"
+                    to="/contact"
+                    style={{ fontSize: 20, marginleft: 20, marginRight: 20 }}
+                  >
+                    Contact Me
+                  </Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
 
-            <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
-            <Navbar.Collapse id="navbar-toggle">
-              <Nav className="m-auto">
-                <Link className="nav-link" to="/" style={{fontSize: 20, marginleft: 20, marginRight: 20}}>
-                  Home
-                </Link>
-                <Link className="nav-link" to="/resume" style={{fontSize: 20, marginleft: 20, marginRight: 20}}>
-                  Resume
-                </Link>
-                <Link className="nav-link" to="/about" style={{fontSize: 20, marginleft: 20, marginRight: 20}}>
-                  About Me
-                </Link>
-                <Link className="nav-link" to="/contact" style={{fontSize: 20, marginleft: 20, marginRight: 20}}>
-                  Contact Me
-                </Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <HomePage
+                  title={this.state.home.title}
+                  subTitle={this.state.home.subTitle}
+                  text={this.state.home.text}
+                />
+              )}
+            />
+            <Route
+              path="/resume"
+              render={() => <ResumePage title={this.state.resume.title} />}
+            />
+            <Route
+              path="/about"
+              render={() => <AboutPage title={this.state.about.title} />}
+            />
+            <Route
+              path="/contact"
+              render={() => <ContactPage title={this.state.contact.title} />}
+            />
 
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <HomePage
-                title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
-                text={this.state.home.text}
-              />
-            )}
-          />
-          <Route
-            path="/resume"
-            render={() => <ResumePage title={this.state.resume.title} />}
-          />
-          <Route
-            path="/about"
-            render={() => <AboutPage title={this.state.about.title} />}
-          />
-          <Route
-            path="/contact"
-            render={() => <ContactPage title={this.state.contact.title} />}
-          />
-
-          <Navbar className="border-bottom" bg="transparent">
-            <Navbar.Brand className="m-auto" style={{color: 'grey', fontWeight: 'lighter', fontSize: 16}}>
-              Made by Mohit Bhole with React.js
-            </Navbar.Brand>
-          </Navbar>
-        </Container>
+            <Navbar className="border-bottom" bg="transparent">
+              <Navbar.Brand
+                className="m-auto"
+                style={{ color: "grey", fontWeight: "lighter", fontSize: 16 }}
+              >
+                Made by Mohit Bhole with React.js
+              </Navbar.Brand>
+            </Navbar>
+          </Container>
       </Router>
     );
   }

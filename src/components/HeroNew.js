@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ProfilePic from "../assets/images/profile.png";
+import ProfilePic from "../assets/images/profile.jpg";
 import Typist from "react-typist";
 
 class Hero extends React.Component {
@@ -40,7 +40,7 @@ class Hero extends React.Component {
               width: "100%",
               alignItems: "center",
               justifyContent: "center",
-              display: 'flex'
+              display: "flex",
             }}
           >
             <div
@@ -62,6 +62,7 @@ class Hero extends React.Component {
                   <Row style={{ alignItems: "center" }}>
                     <h1 className="display-1 font-weight-bolder">Hello!</h1>
                     <img
+                      alt=""
                       src={require("../assets/images/hand.png")}
                       style={{ marginLeft: 34, height: 60, width: 60 }}
                     />
@@ -78,7 +79,7 @@ class Hero extends React.Component {
                         blink: true,
                         element: "_",
                       }}
-                      style={{position: 'relative' ,zIndex: 1}}
+                      style={{ position: "relative", zIndex: 1 }}
                     >
                       <span
                         style={{
@@ -148,7 +149,11 @@ class Hero extends React.Component {
                 marginRight: this.state.width < this.state.height ? "1%" : "4%",
               }}
             >
-              <img className="d-block w-100" src={ProfilePic} alt="Profile" />
+              <img
+                alt=""
+                className="d-block w-100"
+                src={ProfilePic}
+              />
             </div>
           )}
         </div>

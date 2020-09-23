@@ -41,6 +41,14 @@ code {
 	top: 0;
 }
 
+.example-appear {
+  opacity: 0.04;
+}
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
 .g-card-image {
   border-radius: 10px;
   width: 300px;

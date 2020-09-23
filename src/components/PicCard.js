@@ -3,10 +3,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ReactPlayer from "react-player";
-import SupplyShare from "../assets/suppleshare.mp4";
-import Medila from "../assets/medila.mp4";
-import SensoryCuff from "../assets/sensorycuff.mp4";
-import FitnessApplication from "../assets/fitnessapp.mp4";
+import SupplyShare from "../assets/suppleshare-resize.mp4";
+import Medila from "../assets/medila-resize.mp4";
+import SensoryCuff from "../assets/sensorycuff-resize.mp4";
+import FitnessApplication from "../assets/fitnessapp-resize.mp4";
 import Button from "react-bootstrap/Button";
 
 function Content(props) {
