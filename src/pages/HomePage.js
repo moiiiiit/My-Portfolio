@@ -1,116 +1,499 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import Button from "react-bootstrap/Button";
 import Hero from "../components/HeroNew";
+import FlexView from "react-flexview";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import PicCard from "../components/PicCard";
+import ReactWordcloud from "react-wordcloud";
+import { Resizable } from "re-resizable";
+import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
-function HomePage(props) {
-  return (
-    <div>
+class HomePage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      height: 0,
+      width: 0,
+    };
+    window.addEventListener("resize", this.update);
+  }
+  componentDidMount() {
+    this.update();
+  }
+
+  update = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
+  render() {
+    return (
       <div
         style={{
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          marginTop: "5%",
+          marginLeft:
+            this.state.width > this.state.height ? this.state.width / 8 : 0,
+          marginRight:
+            this.state.width > this.state.height ? this.state.width / 8 : 0,
+          paddingBottom: "3%",
         }}
       >
-        <Carousel style={{ width: "45%" }}>
-          <Carousel.Item>
+        <FlexView
+          hAlignContent="center"
+          vAlignContent="center"
+          wrap
+          style={{
+            paddingTop: "5%",
+            marginBottom: "5%",
+          }}
+        >
+          <h1
+            style={{ color: "#17202A" }}
+            className="display-1 font-weight-bolder"
+          >
+            Welcome
+          </h1>
+          <div>
+            <h3
+              style={{
+                marginTop:
+                  this.state.width > this.state.height
+                    ? 46
+                    : this.state.width > 648
+                    ? 46
+                    : 0,
+              }}
+              className="lead font-weight-light"
+            >
+              to my
+            </h3>
+            <h3
+              style={{ marginTop: -20, color: "#2C3E50" }}
+              className="display-4 font-weight-light"
+            >
+              portfolio
+            </h3>
+          </div>
+          {this.state.height < 1.2 * this.state.width ? (
             <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/VYz68OY.jpg"
-              alt="Mind Your Food"
+              src={require("../assets/images/coder.png")}
+              style={{ marginLeft: 40, height: 60, width: 60 }}
             />
-            <Carousel.Caption>
-              <h3 style={{color: 'black'}}>Mind Your Food</h3>
-              <p style={{color: 'black'}}>
-                A mobile application that utilizes OCR to inform the user about the veg-friendliness and allergens of a food item.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
+          ) : null}
+        </FlexView>
+        <Hero style={{ marginLeft: "4%" }} />
 
-          <Carousel.Item>
-            <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/4sCBipp.png"
-              alt="Walk Me Amadeus"
-            />
-            <Carousel.Caption>
-              <h3 style={{color: 'black'}}>Walk Me Amadeus</h3>
-              <p style={{color: 'black'}}>This is a crowdsourced navigation app for walks and hikes. These paths can include unconventional ones like through buildings.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-
-          <Carousel.Item>
-            <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/QNdPon5.jpg"
-              alt="NEAT Webserver"
-            />
-            <Carousel.Caption>
-              <h3 style={{color: 'black'}}>NEAT Webserver</h3>
-              <p style={{color: 'black'}}>
-                Server that generates a population of neural networks and sends them to client machine/s upon request, which then trains it.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-        <h1 style={{marginLeft: '2%'}} className="display-1 font-weight-bolder">Welcome</h1>
-        <div>
-        <h3 style={{marginTop: '20%'}} className="lead font-weight-light">to my</h3>
-          <h3 className="display-4 font-weight-light">portfolio</h3>
+        <div
+          style={{
+            display: "flex",
+            marginTop: 20,
+            justifyContent: "flex-end",
+            marginRight: 50,
+          }}
+        >
+          <Resizable
+            defaultSize={{
+              width: "30%",
+              height: 250,
+            }}
+            style={{
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <ReactWordcloud
+                maxWords={12}
+                options={{
+                  colors: [
+                    "#cAcCcE",
+                    "#566573",
+                    "#273746",
+                    "#212F3D",
+                    "#1C2833",
+                    "#808B96",
+                  ],
+                  rotations: 0,
+                  rotationAngles: [0],
+                  fontFamily: "Roboto",
+                  fontWeight: "bold",
+                  fontSizes: [30, 60],
+                  enableTooltip: false,
+                  transitionDuration: 1000,
+                }}
+                words={[
+                  {
+                    text: "Javascript",
+                    value: "60",
+                  },
+                  {
+                    text: "C++",
+                    value: "64",
+                  },
+                  {
+                    text: "Java",
+                    value: "80",
+                  },
+                  {
+                    text: "React",
+                    value: "84",
+                  },
+                  {
+                    text: "Flutter",
+                    value: "30",
+                  },
+                  {
+                    text: "MySQL",
+                    value: "30",
+                  },
+                  {
+                    text: "Python",
+                    value: "855",
+                  },
+                  {
+                    text: "NodeJS",
+                    value: "82",
+                  },
+                  {
+                    text: "HTML",
+                    value: "81",
+                  },
+                  {
+                    text: "UNIX",
+                    value: "8",
+                  },
+                  {
+                    text: "Azure",
+                    value: "89",
+                  },
+                  {
+                    text: "Android",
+                    value: "84",
+                  },
+                ]}
+              />
+            </div>
+          </Resizable>
         </div>
-      </div>
-      <div>
-        <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
-      </div>
-      <div
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          display: "flex",
-          marginBottom: "4%"
-        }}
-      >
-        <Carousel style={{ width: "84%" }}>
-          <Carousel.Item>
+        <Row
+          style={{
+            justifyContent:
+              this.state.height < 1.2 * this.state.width
+                ? "flex-start"
+                : "center",
+            marginBottom: 24,
+          }}
+        >
+          <h3
+            style={{
+              color: "#2C3E50",
+              marginLeft:
+                this.state.height < 1.2 * this.state.width ? "10%" : 0,
+            }}
+            className="display-6 font-weight-bolder"
+          >
+            {"<<"}Mobile Dev Projects{">>"}
+          </h3>
+          {this.state.height < 1.2 * this.state.width ? (
             <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/E4jaBPE.png"
-              alt="Medila"
+              src={require("../assets/images/phone.png")}
+              style={{ marginLeft: 40, height: 70, width: 70, marginTop: -14 }}
             />
-          </Carousel.Item>
+          ) : null}
+        </Row>
 
-          <Carousel.Item>
-            <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/WPMY6qf.png"
-              alt="Sensory Cuffs"
-            />
-          </Carousel.Item>
+        <FlexView>
+          <PicCard></PicCard>
+        </FlexView>
 
-          <Carousel.Item>
-            <img
-              width={"80%"}
-              height={"80%"}
-              className="d-block w-100"
-              src="https://i.imgur.com/MJwShQi.png"
-              alt="Supply Share"
-            />
-          </Carousel.Item>
-        </Carousel>
+        {/* <hr
+          style={{
+            color: "#F2F3F4",
+            backgroundColor: "#F2F3F4",
+            height: 1,
+          }}
+        /> */}
+
+        <Row
+          style={{
+            justifyContent:
+              this.state.height < 1.2 * this.state.width
+                ? "flex-start"
+                : "center",
+            marginBottom: 24,
+            marginTop: 60,
+          }}
+        >
+          <h3
+            style={{
+              color: "#2C3E50",
+              marginLeft:
+                this.state.height < 1.2 * this.state.width ? "10%" : 0,
+            }}
+            className="display-6 font-weight-bolder"
+          >
+            {"<<"}More Projects{">>"}
+          </h3>
+        </Row>
+
+        <FlexView
+          column
+          hAlignContent={"center"}
+          vAlignContent={"center"}
+          style={{
+            marginTop: 50,
+            justifyContent: "space-between",
+          }}
+        >
+          <Carousel
+            fade={true}
+            interval={6000}
+            keyboard={false}
+            touch={true}
+            nextIcon={<GrCaretNext></GrCaretNext>}
+            prevIcon={<GrCaretPrevious></GrCaretPrevious>}
+          >
+            <Carousel.Item>
+              <img
+                width={"100%"}
+                height={300}
+                className="d-block w-100"
+                src="https://www.beautycolorcode.com/ffffff-2880x1800.png"
+                alt="Mind Your Food"
+              />
+              <Carousel.Caption>
+                <h3
+                  style={{
+                    fontFamily: "roboto",
+                    color: "black",
+                    fontWeight: "light",
+                  }}
+                >
+                  Mind Your Food
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "roboto",
+                    color: "#282b2f",
+                    fontWeight: "light",
+                  }}
+                >
+                  A mobile application that utilizes OCR and scans ingredient
+                  lists to inform the user about non-vegetarian products and
+                  allergens in a food item.
+                </p>
+                <Button
+                  style={{ marginTop: 10 }}
+                  variant="outline-primary"
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/charJe/GreenChoice",
+                      "_blank"
+                    );
+                  }}
+                >
+                  View Source Code
+                </Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <img
+                width={"100%"}
+                height={300}
+                className="d-block w-100"
+                src="https://www.beautycolorcode.com/ffffff-2880x1800.png"
+                alt="Walk Me Amadeus"
+              />
+              <Carousel.Caption>
+                <h3
+                  style={{
+                    fontFamily: "roboto",
+                    color: "black",
+                    fontWeight: "light",
+                  }}
+                >
+                  Walk Me Amadeus
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "roboto",
+                    color: "#282b2f",
+                    fontWeight: "light",
+                  }}
+                >
+                  HackUTA HereAPI Winner - A crowdsourced navigation app for
+                  walks and hikes. These paths can include unconventional ones
+                  like through buildings.
+                </p>
+                <Button
+                  style={{ marginTop: 10 }}
+                  variant="outline-primary"
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/jaymspeights/HackUTA18",
+                      "_blank"
+                    );
+                  }}
+                >
+                  View Source Code
+                </Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <img
+                width={"100%"}
+                height={300}
+                className="d-block w-100"
+                src="https://www.beautycolorcode.com/ffffff-2880x1800.png"
+                alt="NEAT Webserver"
+              />
+              <Carousel.Caption>
+                <h3
+                  style={{
+                    fontFamily: "roboto",
+                    color: "black",
+                    fontWeight: "light",
+                  }}
+                >
+                  NEAT Webserver
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "roboto",
+                    color: "#282b2f",
+                    fontWeight: "light",
+                  }}
+                >
+                  A server that generates a population of neural networks and
+                  sends them to client machine/s upon request, which then trains
+                  it. This makes it possible to train a single set of population
+                  on multiple machines.
+                </p>
+                <Button
+                  style={{ marginTop: 10 }}
+                  variant="outline-primary"
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/moiiiiit/NEATWebserver",
+                      "_blank"
+                    );
+                  }}
+                >
+                  View Source Code
+                </Button>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </FlexView>
+
+        <Row
+          className="justify-content-md-center"
+          style={{
+            marginTop: this.state.height * 0.1,
+            marginBottom: this.state.height * 0.04,
+          }}
+        >
+          <Col xs lg="2">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: this.state.height*0.01,
+              }}
+            >
+              <Button
+                variant="outline-dark"
+                onClick={() => {
+                  window.open("https://github.com/moiiiiit", "_blank");
+                }}
+              >
+                Github
+              </Button>
+            </div>
+          </Col>
+          <Col xs lg="2">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: this.state.height*0.01,
+              }}
+            >
+              <Button
+                variant="outline-dark"
+                onClick={() => {
+                  window.open(
+                    "https://www.linkedin.com/in/mohitbhole/",
+                    "_blank"
+                  );
+                }}
+              >
+                LinkedIn
+              </Button>
+            </div>
+          </Col>
+          <Col xs lg="2">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: this.state.height*0.01,
+              }}
+            >
+              <Button
+                variant="outline-dark"
+                onClick={() => {
+                  window.open("https://devpost.com/MohitBhole", "_blank");
+                }}
+              >
+                Devpost
+              </Button>
+            </div>
+          </Col>
+          <Col xs lg="2">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: this.state.height*0.01,
+              }}
+            >
+              <Button
+                variant="outline-dark"
+                onClick={() => {
+                  window.open("https://www.instagram.com/moiiiiit/", "_blank");
+                }}
+              >
+                Instagram
+              </Button>
+            </div>
+          </Col>
+        </Row>
+
+        {/* <hr
+          style={{
+            color: "#F2F3F4",
+            backgroundColor: "#F2F3F4",
+            height: 1,
+            marginTop: this.state.height * 0.08,
+          }}
+        /> */}
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default HomePage;

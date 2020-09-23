@@ -12,11 +12,34 @@ code {
     monospace;
 }
 
+.carousel-indicators li {
+  background-color: rgb(58, 56, 56); 
+}
 
 .g-card {
   margin: 20px;
 }
 
+.app-inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-width: 1000px;
+	width: 100%;
+}
+
+.app-outer {
+	align-items: center; 
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 0;
+	padding: 20px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 
 .g-card-image {
   border-radius: 10px;

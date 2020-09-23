@@ -1,29 +1,49 @@
 import React from "react";
-
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
 import Hero from "../components/Hero";
-import Content from "../components/Content";
-import Axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 class ContactPage extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      height: 0,
+      width: 0,
+    };
+    window.addEventListener("resize", this.update);
+  }
+  componentDidMount() {
+    this.update();
+  }
+
+  update = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  };
   render() {
     return (
-      <div>
+      <div
+        style={{
+          marginLeft:
+            this.state.width > this.state.height ? this.state.width / 8 : 0,
+          marginRight:
+            this.state.width > this.state.height ? this.state.width / 8 : 0,
+          minHeight: this.state.height - 118,
+        }}
+      >
         <Hero title={this.props.title} text={"Drop me a message!"} />
         <Row className="justify-content-md-center">
           <Col xs={12} sm={2} md={2}>
-              <img
-                className="d-block w-100"
-                src="https://i.imgur.com/mUK4gQI.png"
-                alt="Chat"
-              />
+            <img
+              className="d-block w-100"
+              src="https://i.imgur.com/mUK4gQI.png"
+              alt="Chat"
+            />
           </Col>
         </Row>
-        <div style={{ height: "100%", marginTop: '5%' }}>
+        <div style={{ height: "100%", marginTop: "5%" }}>
           <h3
             style={{ textAlign: "center" }}
             className="display-8 font-weight-light"
@@ -38,6 +58,7 @@ class ContactPage extends React.Component {
             My Email: mohitbhole@outlook.com
           </h3>
         </div>
+        <div style={{ height: this.state.height * 0.1 }}></div>
       </div>
     );
   }

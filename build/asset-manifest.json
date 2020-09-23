@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/My-Portfolio/static/css/main.a1b7b015.chunk.css",
-    "main.js": "/My-Portfolio/static/js/main.25858fb4.chunk.js",
-    "main.js.map": "/My-Portfolio/static/js/main.25858fb4.chunk.js.map",
-    "runtime~main.js": "/My-Portfolio/static/js/runtime~main.f7066801.js",
-    "runtime~main.js.map": "/My-Portfolio/static/js/runtime~main.f7066801.js.map",
-    "static/css/2.510409cd.chunk.css": "/My-Portfolio/static/css/2.510409cd.chunk.css",
-    "static/js/2.51242b6d.chunk.js": "/My-Portfolio/static/js/2.51242b6d.chunk.js",
-    "static/js/2.51242b6d.chunk.js.map": "/My-Portfolio/static/js/2.51242b6d.chunk.js.map",
-    "index.html": "/My-Portfolio/index.html",
-    "precache-manifest.15205983a594cc1b932f409259e41e3c.js": "/My-Portfolio/precache-manifest.15205983a594cc1b932f409259e41e3c.js",
-    "service-worker.js": "/My-Portfolio/service-worker.js",
-    "static/css/2.510409cd.chunk.css.map": "/My-Portfolio/static/css/2.510409cd.chunk.css.map",
-    "static/css/main.a1b7b015.chunk.css.map": "/My-Portfolio/static/css/main.a1b7b015.chunk.css.map"
+    "main.css": "./static/css/main.2fdb5af7.chunk.css",
+    "main.js": "./static/js/main.cedffe93.chunk.js",
+    "main.js.map": "./static/js/main.cedffe93.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/css/2.207c7e13.chunk.css": "./static/css/2.207c7e13.chunk.css",
+    "static/js/2.0bdd342c.chunk.js": "./static/js/2.0bdd342c.chunk.js",
+    "static/js/2.0bdd342c.chunk.js.map": "./static/js/2.0bdd342c.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.84e6e4dbe8b5a6d18fa21603859ccb54.js": "./precache-manifest.84e6e4dbe8b5a6d18fa21603859ccb54.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.207c7e13.chunk.css.map": "./static/css/2.207c7e13.chunk.css.map",
+    "static/css/main.2fdb5af7.chunk.css.map": "./static/css/main.2fdb5af7.chunk.css.map",
+    "static/media/coder.png": "./static/media/coder.307eb685.png",
+    "static/media/favicon.ico": "./static/media/favicon.adee18bd.ico",
+    "static/media/fitnessapp.mp4": "./static/media/fitnessapp.d3744f60.mp4",
+    "static/media/hand.png": "./static/media/hand.20d0f23b.png",
+    "static/media/medila.mp4": "./static/media/medila.e86d6de9.mp4",
+    "static/media/profile.png": "./static/media/profile.8f31fc4e.png",
+    "static/media/sensorycuff.mp4": "./static/media/sensorycuff.13996926.mp4",
+    "static/media/suppleshare.mp4": "./static/media/suppleshare.417db951.mp4"
   }
 }
