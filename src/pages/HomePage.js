@@ -90,6 +90,22 @@ class HomePage extends React.Component {
               />
             ) : null}
           </FlexView>
+          <h5
+              style={{
+                color: "#2C3E50",
+                marginLeft:
+                  this.state.height < 1.2 * this.state.width ? "10%" : 0,
+                  borderWidth: 2,
+                  marginBottom: this.state.height * 0.04
+              }}
+              className="display-6 font-weight-bolder"
+            >
+              My new (and updated) portfolio created with Angular can be found at:{" "} <a
+                href="https://mohitbhole.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >mohitbhole.com</a>
+            </h5>
           <Hero style={{ marginLeft: "4%" }} />
 
           <Row
@@ -284,7 +300,7 @@ class HomePage extends React.Component {
             </h3>
           </Row>
 
-          <FlexView
+          {/* <FlexView
             column
             hAlignContent={"center"}
             vAlignContent={"center"}
@@ -434,7 +450,7 @@ class HomePage extends React.Component {
                 </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
-          </FlexView>
+          </FlexView> */}
 
           <Row
             className="justify-content-md-center"

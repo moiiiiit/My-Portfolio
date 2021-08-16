@@ -53,7 +53,7 @@ class HomePage extends React.Component {
             vAlignContent="center"
           >
             <Iframe
-              url="https://onedrive.live.com/embed?cid=38128077D4A08E1D&resid=38128077D4A08E1D%21646&authkey=ACr6FeI-CV72tC8&em=2"
+              url="https://onedrive.live.com/embed?cid=38128077D4A08E1D&resid=38128077D4A08E1D%211072&authkey=ACCnR7RrisBRyoQ&em=2"
               width={this.state.width * 0.5}
               height={this.state.height}
               id="resume"

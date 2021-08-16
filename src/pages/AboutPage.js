@@ -76,14 +76,6 @@ class AboutPage extends React.Component {
               >
                 here
               </a>{" "}
-              and my Resume is:{" "}
-              <a
-                href="https://drive.google.com/file/d/1VwPJvzqBgs6YEyBzSqoWkunYJSvTAFSY/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                here
-              </a>
             </h3>
             <p></p>
             <p></p>
